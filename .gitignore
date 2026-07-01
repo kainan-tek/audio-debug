@@ -1,0 +1,10 @@
+# 运行时产出：保留目录结构（.gitkeep），忽略实际报告内容
+output/reports/*
+!output/reports/.gitkeep
+
+# 编辑器/系统
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

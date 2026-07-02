@@ -84,10 +84,11 @@ author: "kainan"
 
 **查无问题**：若步骤 1 未识别到任何独立问题（分析范围内无匹配故障现象），不写文档、不硬凑根因；在对话内说明查无并给判断——预期行为/误报则如实说明，证据不足则建议补日志/确认时间窗/提供复现步骤——交用户判断，到此结束。
 
-综合所有模块分析结果，**每个识别到的独立问题（一个问题一个文件）**写入 `${CLAUDE_SKILL_DIR}/output/reports/<主题>_<类型>.md`。主题用英文 snake_case（如 `adsp_timeout`）。类型按根因确定度：根因确定 → `fix_plan`（修复方案，需源码可达）；根因不确定 → `analysis`（标「根因待证」）；源码不可达一律 `analysis`（标「源码未验证」）。如 `adsp_timeout_analysis.md`、`audioflinger_sched_rr_fix_plan.md`。**不按 bug ID 命名**；现有 output/reports/ 历史文件命名风格不一，新建按本规则即可，不回改历史文件。
+综合所有模块分析结果，**每个识别到的独立问题（一个问题一个文件）**写入 `${CLAUDE_SKILL_DIR}/output/reports/<soc>_<主题>_<类型>.md`。`<soc>` 小写（`sa8295`/`mt8091`/`sa8397`，SA8797 用 `sa8397`）；主题用英文 snake_case（如 `adsp_timeout`）。类型按根因确定度：根因确定 → `fix_plan`（修复方案，需源码可达）；根因不确定 → `analysis`（标「根因待证」）；源码不可达一律 `analysis`（标「源码未验证」）。如 `sa8295_adsp_timeout_analysis.md`、`sa8397_audioflinger_sched_rr_fix_plan.md`。现有 output/reports/ 历史文件命名风格不一，新建按本规则即可，不回改历史文件。
 
 每个文档必含字段：
 
+- SOC 平台
 - 故障类型
 - 根因（附日志关键证据行）
 - 源码定位：按步骤 1 五件套规则——可达给文件路径 + 实际行号；不可达给 paths.md 路径 +「源码未验证」

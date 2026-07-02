@@ -72,7 +72,7 @@ audio-debug/
   issues/               # 问题输入文件（issue_info.txt，可预填三项）
   reference/            # 调试参考（架构总览、调试参考类知识文档，按需查）
   output/               # 分析产出
-    reports/            # 单次 bug 报告（<主题>_<类型>.md）
+    reports/            # 单次 bug 报告（<soc>_<主题>_<类型>.md）
   platforms/            # 平台参考（源码路径 MD；知识图暂不支持）
 ```
 

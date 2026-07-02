@@ -18,7 +18,7 @@
 | `issues/` | 问题输入（`issue_info.txt` 预填三项，另三项选填） | 用户预填 |
 | `platforms/` | 各 SOC 平台源码路径索引（`<soc>_paths.md`） | 维护，已建 |
 | `reference/` | 架构总览 / 调试参考类知识文档，按需查 | 维护，按需补充 |
-| `output/reports/` | 单次 bug 报告（`<主题>_<类型>.md`） | `/audio-debug` 步骤 2 产出 |
+| `output/reports/` | 单次 bug 报告（`<soc>_<主题>_<类型>.md`） | `/audio-debug` 步骤 2 产出 |
 | `docs/` | 设计文档（`DESIGN.md`）+ 标签映射 TODO | 维护 |
 
 ## 工作准则

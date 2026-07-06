@@ -1,13 +1,20 @@
 # SA8295 (Android 12L, QCOM) — 源码路径
 
-**作者**: kainan | **日期**: 2026-06-12 | **版本**: 2.0
+**作者**: kainan | **日期**: 2026-06-10 | **版本**: 2.0
 
 **源码根路径（GVM Android 侧）**: `<待填：Android 源码树根路径>`
 **源码根路径（PVM QNX 侧）**: `<待填：QNX 源码树根路径>`
 **源码知识图输出**: 暂不支持
 
 > **访问前提**: 根路径可能因权限或挂载不可达，查询前先检查路径可达性。
-> **路径类型**: 相对路径不以 `/` 开头 → 源码树路径。GVM Android 侧路径拼 Android 根路径；PVM QNX 侧路径拼 QNX 根路径。以 `/` 开头 → 设备运行时路径，不拼接。
+
+> **源码路径查找规则**
+>
+> - 侧根 = 文件头对应侧「源码根路径」（绝对路径）；行内 = 表格「相对路径」列；prefix = 节内 `> **prefix**:` 注（无则跳过）。
+> - 绝对路径 = 侧根 + prefix + 行内。
+> - 行内以 `/` 开头 → 设备运行时路径，不拼。
+
+> **分支差异**: 表中路径基于主分支统计；不同分支可能重构/改名/增删文件，与本文不一致时在该分支自行定位。
 
 ## 调用栈
 
@@ -176,4 +183,3 @@ SA8295 控制流路径（GVM 侧）：xxx
 | CarAudioZonesHelper | `packages/services/Car/service/src/com/android/car/audio/CarAudioZonesHelper.java` | context↔device address 映射 | CarService.apk |
 | CarAudio 配置 (前排) | `vendor/qcom/opensource/audio-hal-ar/primary-hal/configs/common_au/car_audio_configuration.xml` | context↔device address 配置（前排 DHU，单/双 DHU 均使用） | (config) |
 | CarAudio 配置 (后排) | `vendor/qcom/opensource/audio-hal-ar/primary-hal/configs/common_au/car_audio_configuration_rear.xml` | context↔device address 配置（后排 DHU，仅双 DHU 车型使用） | (config) |
-
